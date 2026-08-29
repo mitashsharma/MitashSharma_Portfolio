@@ -67,3 +67,23 @@ if (themeToggleBtn) {
         themeText.textContent = isLight ? "Light" : "Dark";
     });
 }
+
+document.getElementById("emailButton").addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const email = "sharmamitash23@gmail.com";
+
+    // Detect mobile devices
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Let the phone open Gmail or its default email app
+        window.location.href = `mailto:${email}`;
+    } else {
+        // Desktop: open Gmail Compose
+        const gmailUrl =
+            `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+
+        window.open(gmailUrl, "_blank");
+    }
+});
