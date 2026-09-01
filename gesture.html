@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture Control System | Mitash Sharma</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Gesture Control System</a>
+
+            <div class="nav-right">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <span id="theme-icon">🌙</span>
+                    <span id="theme-text">Dark</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="project-details">
+
+        <section class="project-hero">
+            <h1>Gesture Control System</h1>
+            <p class="project-intro">
+                A computer-vision-based system that enables hands-free
+                computer interaction using hand gestures.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Project Overview</h2>
+            <p>
+                The Gesture Control System is a computer-vision-based
+                project that enables users to interact with a computer
+                using hand gestures. The system uses a camera to capture
+                hand movements and processes the visual input to identify
+                predefined gestures.
+            </p>
+            <p>
+                Recognized gestures can then be mapped to specific
+                computer commands, allowing users to perform certain
+                actions without directly using a keyboard or mouse.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Objective</h2>
+            <p>
+                The primary objective of the project is to explore
+                hands-free human-computer interaction using computer
+                vision and hand-gesture recognition.
+            </p>
+            <p>
+                The project demonstrates how cameras and computer-vision
+                techniques can be used to interpret physical hand
+                movements and convert them into digital commands.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Key Features</h2>
+            <ul class="project-list">
+                <li>Real-time camera input</li>
+                <li>Hand detection</li>
+                <li>Gesture recognition</li>
+                <li>Hands-free computer interaction</li>
+                <li>Gesture-to-command mapping</li>
+                <li>Real-time processing</li>
+                <li>Simple and intuitive interaction</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>How It Works</h2>
+            <p>
+                The system begins by accessing the computer's camera and
+                continuously capturing video frames.
+            </p>
+            <p>
+                The captured frames are processed to detect the user's
+                hand and identify important hand movements or positions.
+                Once a predefined gesture is recognized, the system maps
+                that gesture to a corresponding computer action.
+            </p>
+            <p>
+                Different gestures can be configured to control actions
+                such as navigation, scrolling, clicking, or other
+                supported computer commands.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Computer Vision</h2>
+            <p>
+                Computer vision plays an important role in the project by
+                allowing the system to analyze visual information from
+                the camera.
+            </p>
+            <p>
+                The hand is detected from each frame, and its position
+                or movement is analyzed to determine which gesture the
+                user is performing.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Gesture-to-Command System</h2>
+            <p>
+                The core concept of the project is connecting a
+                recognized hand gesture with a computer command.
+            </p>
+            <div class="workflow">
+                <div>Hand Gesture</div>
+                <span>→</span>
+                <div>Gesture Detection</div>
+                <span>→</span>
+                <div>Gesture Recognition</div>
+                <span>→</span>
+                <div>Computer Command</div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2>Technologies Used</h2>
+            <div class="project-tags">
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>Computer Vision</span>
+                <span>Hand Gesture Recognition</span>
+                <span>Machine Learning</span>
+                <span>PyAutoGUI</span>
+                <span>Webcam</span>
+            </div>
+        </section>
+
+        <!-- <section class="project-section">
+            <h2>Project Output</h2>
+            <p>
+                The following screenshots demonstrate the gesture
+                detection and computer-control functionality of the
+                project.
+            </p>
+            <div class="project-images">
+                <img src="assets/gesture/output1.png" alt="Gesture Control System output">
+                <img src="assets/gesture/output2.png" alt="Gesture Control System gesture detection">
+            </div>
+        </section>-->
+
+        <section class="project-section">
+            <h2>Project Outcome</h2>
+            <p>
+                The project demonstrates the potential of computer vision
+                for creating natural and hands-free human-computer
+                interaction.
+            </p>
+            <p>
+                It provides a foundation that can be extended into
+                applications such as accessibility tools, smart-device
+                control, presentation control, gaming interfaces, and
+                touch-free computer interaction.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Future Improvements</h2>
+            <p>
+                Future versions could support a larger number of
+                gestures, improved recognition accuracy, voice commands,
+                customizable gesture mappings, multi-hand recognition,
+                and integration with smart-home or IoT devices.
+            </p>
+        </section>
+
+        <section class="project-actions">
+            <a href="YOUR_GITHUB_LINK" class="project-btn github" target="_blank" rel="noopener">
+                GitHub
+            </a>
+            <a href="projects.html" class="project-btn demo">
+                ← All Projects
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Mitash Sharma.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

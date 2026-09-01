@@ -58,13 +58,28 @@ const themeToggleBtn = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
 const themeText = document.getElementById("theme-text");
 
+function applyTheme(theme) {
+    if (theme === "dark") {
+        document.body.classList.add("dark-theme");
+        if (themeIcon) themeIcon.textContent = "☀️";
+        if (themeText) themeText.textContent = "Light";
+    } else {
+        document.body.classList.remove("dark-theme");
+        if (themeIcon) themeIcon.textContent = "🌙";
+        if (themeText) themeText.textContent = "Dark";
+    }
+}
+
+const savedTheme = localStorage.getItem("theme") || "light";
+applyTheme(savedTheme);
+
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
-        const isLight = document.body.classList.contains("light-theme");
-        
-        themeIcon.textContent = isLight ? "☀️" : "🌙";
-        themeText.textContent = isLight ? "Light" : "Dark";
+        const isDark = document.body.classList.contains("dark-theme");
+        const newTheme = isDark ? "light" : "dark";
+
+        applyTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
     });
 }
 
