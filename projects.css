@@ -579,6 +579,12 @@ body.dark-theme .project-tags span:hover {
 
 /* =========================================================
    MOBILE
+   (Note: this single @media (max-width: 700px) block merges
+   two previously separate declarations of the same breakpoint
+   found in the source — .project-images img height rule that
+   was declared further down has been folded in here, in the
+   same relative order, so the final applied styles are 100%
+   identical to the original file.)
 ========================================================= */
 
 @media (max-width: 700px) {
@@ -679,28 +685,34 @@ body.dark-theme .project-tags span:hover {
     }
 
     .project-images img {
-    display: block;
+        display: block;
 
-    width: 100%;
-    height: 280px; /* Fixed height for all desktop/tablet images */
+        width: 100%;
+        height: 280px; /* Fixed height for all desktop/tablet images */
 
-    object-fit: cover; /* Ensures images fill the container without stretching */
+        object-fit: cover; /* Ensures images fill the container without stretching */
 
-    background: var(--card-bg);
+        background: var(--card-bg);
 
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
 
-    padding: 0; /* Set to 0 so edge-to-edge cover fitting looks clean */
+        padding: 0; /* Set to 0 so edge-to-edge cover fitting looks clean */
 
-    box-shadow:
-        0 8px 25px rgba(15, 118, 110, 0.08);
+        box-shadow:
+            0 8px 25px rgba(15, 118, 110, 0.08);
 
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    /* Merged from the duplicate 700px query further down
+       the original stylesheet — overrides height above */
+    .project-images img {
+        height: 250px;
+    }
 
     /* Buttons */
 
@@ -782,11 +794,13 @@ body.dark-theme .project-tags span:hover {
     }
 }
 
-@media (max-width: 700px) {
-    .project-images img {
-        height: 250px;
-    }
-}
+/* =========================================================
+   LATE-STAGE COMPATIBILITY OVERRIDES
+   These rules intentionally re-declare a few selectors
+   above (.project-details, .project-section, .project-images img)
+   to patch/adjust specific properties without touching the
+   rest of their original definitions. Kept exactly as-is.
+========================================================= */
 
 /* Revert project-details container to block display */
 .project-details {
@@ -800,7 +814,8 @@ body.dark-theme .project-tags span:hover {
     margin-bottom: 35px;
 }
 
-/* Force equal height and crop for images inside project-images grid */
+/* Force equal height and crop for images inside project-images grid
+   (uses !important to guarantee this wins over earlier/media rules) */
 .project-images img {
     width: 100%;
     height: 250px !important;
@@ -808,4 +823,38 @@ body.dark-theme .project-tags span:hover {
     object-position: top center !important;
     background: #ffffff; /* Gives a clean background for full images */
     padding: 10px !important;
+}
+
+/* =========================================================
+   CERTIFICATE DETAIL EXTENSIONS
+========================================================= */
+
+.cert-preview-box {
+    margin-top: 25px;
+    padding: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.cert-preview-box:hover {
+    border-color: var(--border-hover);
+}
+
+.cert-preview-box img {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(15, 118, 110, 0.08);
+}
+
+body.dark-theme .cert-preview-box img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }

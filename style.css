@@ -2,6 +2,8 @@
    RESET & THEME VARIABLES
 ========================= */
 
+/* Global reset — removes default browser spacing and 
+   ensures consistent box-sizing across all elements */
 * {
     margin: 0;
     padding: 0;
@@ -57,6 +59,8 @@
 
 /* =========================
    DARK THEME
+   Overrides root variables when "dark-theme" 
+   class is applied to <body>
 ========================= */
 
 body.dark-theme {
@@ -120,6 +124,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 
+    /* Smooth transition when switching between light/dark theme */
     transition:
         background-color 0.4s ease,
         color 0.4s ease;
@@ -238,7 +243,7 @@ header {
 ========================= */
 
 .nav-toggle {
-    display: none;
+    display: none; /* Hidden by default, shown only on small screens */
 
     background: transparent;
     border: none;
@@ -481,6 +486,7 @@ header {
     border-radius: 50%;
 }
 
+/* Traffic-light style window dots (red/yellow/green) */
 .window-header span:nth-child(1) {
     background: #ff5f56;
 }
@@ -523,6 +529,8 @@ header {
 
 /* =========================
    SECTIONS
+   Generic wrapper used by About / Skills / Projects / 
+   Contact — handles fade-in scroll animation
 ========================= */
 
 .section {
@@ -541,6 +549,7 @@ header {
         transform 0.7s ease;
 }
 
+/* "show" class is toggled via JS (e.g. IntersectionObserver) */
 .section.show {
     opacity: 1;
 
@@ -566,6 +575,7 @@ header {
     position: relative;
 }
 
+/* Decorative underline below each section title */
 .section-title::after {
     content: "";
 
@@ -816,6 +826,8 @@ header {
 
 /* =========================
    PROJECT TECHNOLOGY TAGS
+   Note: .project-tech and .project-tags are two
+   separate tag styles used on different card variants
 ========================= */
 
 .project-tech,
@@ -872,7 +884,6 @@ header {
 
 /* GitHub and View Details
    have exactly the same size */
-
 .project-buttons .project-btn,
 .project-buttons .view-details-btn {
     width: 140px;
@@ -902,9 +913,7 @@ header {
     transition: all 0.3s ease;
 }
 
-
-/* GitHub */
-
+/* GitHub button */
 .project-btn.github {
     background: var(--accent-gradient);
 
@@ -913,9 +922,7 @@ header {
     border: none;
 }
 
-
-/* View Details */
-
+/* View Details button */
 .view-details-btn {
     background: var(--primary-gradient);
 
@@ -924,9 +931,7 @@ header {
     border: none;
 }
 
-
-/* Button Hover */
-
+/* Shared hover state for both buttons */
 .project-buttons .project-btn:hover,
 .project-buttons .view-details-btn:hover {
     transform: translateY(-3px);
@@ -934,9 +939,7 @@ header {
     box-shadow: var(--glow-primary);
 }
 
-
-/* Project Status */
-
+/* Project status label (e.g. "Completed", "In Progress") */
 .project-status {
     margin-top: 15px;
 
@@ -1001,9 +1004,7 @@ header {
     display: block;
 }
 
-
-/* Light Mode Profile Frame */
-
+/* Light Mode Profile Frame override (softer shadow/border) */
 body:not(.dark-theme) .profile-frame {
     box-shadow:
         0 15px 35px rgba(15, 118, 110, 0.15);
@@ -1221,6 +1222,7 @@ footer {
         font-size: 2.8rem;
     }
 
+    /* Show hamburger icon, hide desktop nav links */
     .nav-toggle {
         display: flex;
     }
@@ -1244,6 +1246,7 @@ footer {
         border-bottom: 1px solid var(--border-color);
     }
 
+    /* Toggled via JS when hamburger is clicked */
     .nav-links.active {
         display: flex;
     }
@@ -1273,7 +1276,6 @@ footer {
     }
 
     /* Keep project buttons same size on mobile */
-
     .project-buttons {
         flex-wrap: wrap;
     }
@@ -1319,4 +1321,144 @@ footer {
         width: 100%;
         max-width: 140px;
     }
+}
+
+
+/* =========================================================
+   VIRTUAL INTERNSHIPS & CERTIFICATES
+   (Duplicate .certificates-grid / .cert-card rule set
+   previously declared twice in the source — merged here)
+========================================================= */
+
+.internship-summary-card {
+    background: var(--card-gradient);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.internship-summary-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+}
+
+.internship-summary-card h3 {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.internship-summary-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Certificate Grid Layout */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background: var(--card-gradient);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-5px);
+    box-shadow: var(--glow-primary);
+}
+
+.cert-issuer {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cert-card h3 {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+}
+
+.cert-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments for internship/certificate cards */
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .internship-summary-card,
+    .cert-card {
+        padding: 22px;
+    }
+}
+
+/* Embedded PDF preview container (e.g. certificate PDFs) */
+.pdf-container {
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+}
+
+.pdf-container iframe {
+    border: none;
+    display: block;
+}
+
+
+/* =========================
+   CERTIFICATE IMAGE PREVIEWS
+========================= */
+
+.cert-image-preview {
+    margin: 16px 0 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-image-preview:hover {
+    border-color: var(--border-hover);
+    transform: scale(1.02);
+}
+
+.cert-image-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
