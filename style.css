@@ -365,9 +365,11 @@ main {
 }
 
 .secondary-btn:hover {
-    background: var(--surface-tint);
+    background: var(--gradient);
+    border-color: transparent;
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
 }
 
 .project-buttons {
@@ -564,7 +566,7 @@ main {
     border-radius: 999px;
     border: 1.5px solid var(--border-strong);
     background: var(--surface);
-    color: var(--ink-soft);
+    color: var(--teal);
     font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
@@ -1191,7 +1193,7 @@ main {
     border-radius: 999px;
     border: 1.5px solid var(--border-strong);
     background: var(--surface);
-    color: var(--ink);
+    color: var(--teal);
     font-weight: 700;
     text-decoration: none;
     box-shadow: var(--shadow-sm);
@@ -1204,13 +1206,6 @@ main {
     color: #fff;
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
-}
-
-.contact-links a.btn {
-    background: var(--gradient);
-    border-color: transparent;
-    color: #fff;
-    box-shadow: 0 10px 24px rgba(13, 148, 136, 0.32);
 }
 
 /* ------------------------- Footer ------------------------- */
