@@ -1,54 +1,54 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Approver | Mitash Sharma</title>
+    <meta name="description" content="Loan Approver by Mitash Sharma — machine learning system that predicts loan application approval.">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f766e'/%3E%3Cstop offset='1' stop-color='%230891b2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EMS%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="projects.css">
 </head>
-
 <body>
 
-```
-<header>
-    <nav class="navbar">
+    <div class="scroll-progress" aria-hidden="true"></div>
 
-        <a href="index.html" class="logo">
-            Loan Approver
-        </a>
+    <!-- Header / Navigation (identical on every page) -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo" aria-label="Mitash Sharma — home">
+                <span class="logo-mark" aria-hidden="true">MS</span>
+                <span class="logo-text">Mitash <em>Sharma</em></span>
+            </a>
 
-        <div class="nav-right">
+            <div class="nav-right">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-            <button class="nav-toggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" data-nav="home">Home</a></li>
+                    <li><a href="index.html#about" data-nav="about">About</a></li>
+                    <li><a href="index.html#skills" data-nav="skills">Skills</a></li>
+                    <li><a href="projects.html" data-nav="projects">Projects</a></li>
+                    <li><a href="certificates.html" data-nav="certificates">Certificates</a></li>
+                    <li><a href="index.html#contact" data-nav="contact">Contact</a></li>
+                </ul>
 
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
+                <a href="assets/CV.pdf" class="nav-resume" target="_blank" rel="noopener">Resume ↗</a>
+            </div>
+        </nav>
+    </header>
 
-            <button id="theme-toggle" class="theme-toggle-btn">
-                <span id="theme-icon">🌙</span>
-                <span id="theme-text">Dark</span>
-            </button>
+    <main class="project-details">
 
-        </div>
-
-    </nav>
-</header>
-
-
-<main class="project-details">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">›</span><a href="projects.html">Projects</a><span aria-hidden="true">›</span><span aria-current="page">Loan Approver</span></nav>
 
     <!-- Hero -->
     <section class="project-hero">
@@ -329,20 +329,62 @@
 
     </section>
 
-</main>
 
 
-<footer>
-
-    <p>
-        © 2026 Mitash Sharma.
-    </p>
-
-</footer>
+        <nav class="project-pager" aria-label="More projects">
+            <a href="error-detector.html" class="prev"><span class="pager-label">← Previous Project</span><span class="pager-title">Error Detector</span></a>
+            <a href="ml_studio.html" class="next"><span class="pager-label">Next Project →</span><span class="pager-title">ML Workspace</span></a>
+        </nav>
+    </main>
 
 
-<script src="script.js"></script>
-```
+    <!-- Footer (identical on every page) -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo" aria-label="Mitash Sharma — home">
+                    <span class="logo-mark" aria-hidden="true">MS</span>
+                    <span class="logo-text">Mitash <em>Sharma</em></span>
+                </a>
+                <p>AI &amp; Data Science student building data-driven applications, machine learning solutions, and interactive web projects.</p>
+            </div>
 
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="assets/CV.pdf" target="_blank" rel="noopener">Resume</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="mailto:sharmamitash23@gmail.com">sharmamitash23@gmail.com</a></li>
+                    <li><a href="https://github.com/mitashsharma" target="_blank" rel="noopener">GitHub ↗</a></li>
+                    <li><a href="https://www.linkedin.com/in/mitash-sharma-9ba83834b/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span data-year>2026</span> Mitash Sharma. All rights reserved.</p>
+            <p>Built with HTML, CSS &amp; JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- Back to top + image lightbox (identical on every page) -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+        <button class="lightbox-close" aria-label="Close preview">×</button>
+        <img src="" alt="">
+        <p class="lightbox-caption"></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
