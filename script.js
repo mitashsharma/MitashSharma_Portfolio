@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .querySelectorAll(".project-images img, .cert-image-preview img")
             .forEach((img) => {
                 img.setAttribute("loading", "lazy");
+                img.setAttribute("title", "Click to view full screenshot");
                 // Gracefully hide any screenshot whose file is missing
                 img.addEventListener("error", () => { img.style.display = "none"; });
                 img.addEventListener("click", () => {

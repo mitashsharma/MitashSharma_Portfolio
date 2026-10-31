@@ -1074,6 +1074,13 @@ main {
 
 .project-images img {
     width: 100%;
+    /* Uniform tiles: every screenshot fills the same 16:10 frame
+       (top-anchored so app headers stay visible; click opens the
+       full uncropped image in the lightbox) */
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top center;
+    background: var(--surface-tint);
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
     box-shadow: var(--shadow-sm);
